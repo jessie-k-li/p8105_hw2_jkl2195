@@ -136,9 +136,6 @@ df_mci_amyloid = read_csv("data/mci_amyloid.csv", na = c("NA", "Na"), skip = 1) 
   rename(
     id = study_id
   )
-
-#Check if there is any participants that only exist in baseline or amyloid
-print(df_mci_baseline |> select(id) |> filter(!(id %in% pull(df_mci_amyloid, id))))
 ```
 **Description**  
 The MCI amyloid contains the study id of the individuals, time since the beginning of the study to conduct Amyloid 42/40 testing, and biomarker values at corresponding time. 
